@@ -18,3 +18,12 @@ When running the publisher (`cargo run`), it sends 5 `UserCreatedEventMessage` e
 The subscriber (running in a separate terminal) listens to the `user_created` queue and processes each event.
 
 ![message passing screenshot](./images/message_passing_screenshot.png)
+
+### Spikes on the Interface
+
+When the publisher is run, it sends 5 `UserCreatedEventMessage` events at once to the `user_created` queue.  
+If you observe the message broker dashboard (e.g., RabbitMQ UI), you'll notice **spikes** on the message rate chart.
+
+These spikes represent a burst of traffic caused by the publisher sending multiple events rapidly.
+
+![rabbitmq spikes screenshot](./images/rabbitmq_spikes_screenshot.png)
