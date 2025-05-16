@@ -50,7 +50,7 @@ When multiple subscribers are running and listening to the same queue or routing
 1. Create a RabbitMQ Cloud Instance.
 
 ![cloud amqp screenshot](./images/cloudamqp_screenshot.png)
-![lavinmq screenshot](./images/lavinmq_screenshot.png)
+![cloud rabbitmq screenshot](./images/cloud_rabbitmq_screenshot.png)
 
 2. Configure VPS firewall to accept traffic from port 5672.
 
@@ -86,4 +86,4 @@ The Rust application on the VPS already has a delay when processing each request
 The effect is further intensified when running multiple publishers on different terminals.
 
 ![cloud multiple publishers screenshot](./images/cloud_multiple_publishers_screenshot.png)
-![cloud lavinmq multiple items impact screenshot](./images/cloud_lavinmq_multiple_items_impact_screenshot.png)
+![cloud rabbitmq multiple items impact screenshot](./images/cloud_rabbitmq_multiple_items_impact_screenshot.png)
