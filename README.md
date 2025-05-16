@@ -8,4 +8,13 @@ Fakta bahwa URL koneksi amqp://guest:guest@localhost:5672 sama dengan yang digun
 
 ## RabbitMQ Screenshot
 
-![screenshot rabbitmq](./images/rabbitmq_screenshot.png)
+### Web Interface
+
+![rabbitmq screenshot](./images/rabbitmq_screenshot.png)
+
+### Message Passing Example
+
+When running the publisher (`cargo run`), it sends 5 `UserCreatedEventMessage` events to the message broker.  
+The subscriber (running in a separate terminal) listens to the `user_created` queue and processes each event.
+
+![message passing screenshot](./images/message_passing_screenshot.png)
