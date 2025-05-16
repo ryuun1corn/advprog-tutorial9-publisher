@@ -67,5 +67,14 @@ When multiple subscribers are running and listening to the same queue or routing
 When running the publisher (`cargo run`), it sends 30 `UserCreatedEventMessage` events to the message broker on the cloud.  
 The subscriber (running in a VPS) listens to the `user_created` queue and processes each event.
 
-![cloud message passing 1](./images/cloud_message_passing_1.png)
 ![cloud message passing 2](./images/cloud_message_passing_2.png)
+![cloud message passing 1](./images/cloud_message_passing_1.png)
+
+### CLOUD: Spikes on the Interface
+
+When the publisher is run, it sends 30 `UserCreatedEventMessage` events at once to the `user_created` queue.  
+If you observe the message broker dashboard (on the LavinMQ interface), you'll notice **spikes** on the message rate chart.
+
+These spikes represent a burst of traffic caused by the publisher sending multiple events rapidly.
+
+![cloud rabbitmq spikes](./images/cloud_rabbitmq_spikes.png)
