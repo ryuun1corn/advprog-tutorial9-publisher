@@ -78,3 +78,12 @@ If you observe the message broker dashboard (on the LavinMQ interface), you'll n
 These spikes represent a burst of traffic caused by the publisher sending multiple events rapidly.
 
 ![cloud rabbitmq spikes](./images/cloud_rabbitmq_spikes.png)
+
+### CLOUD: Multiple Items in Queue with Slow Subscriber
+
+The Rust application on the VPS already has a delay when processing each request, which simulates a slow subscriber.
+
+The effect is further intensified when running multiple publishers on different terminals.
+
+![cloud multiple publishers screenshot](./images/cloud_multiple_publishers_screenshot.png)
+![cloud lavinmq multiple items impact screenshot](./images/cloud_lavinmq_multiple_items_impact_screenshot.png)
