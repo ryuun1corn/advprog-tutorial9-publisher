@@ -27,3 +27,11 @@ If you observe the message broker dashboard (e.g., RabbitMQ UI), you'll notice *
 These spikes represent a burst of traffic caused by the publisher sending multiple events rapidly.
 
 ![rabbitmq spikes screenshot](./images/rabbitmq_spikes_screenshot.png)
+
+### Multiple Items in Queue with Slow Subscriber
+
+When the publisher keeps sending events continuously, those events are placed into the message queue on the broker. The producer can send requests rapidly, while the consumer processes each message one by one in order.
+
+Because of this, the queue can build up if the consumer cannot keep up with the speed of the producer. As a result, the total number of messages in the queue may grow to dozens or more, depending on how fast events are sent and how fast they are processed.
+
+![slow subscriber screenshot](./images/slow_subscriber_queue_screenshot.png)
