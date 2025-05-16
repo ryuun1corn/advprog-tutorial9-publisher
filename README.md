@@ -5,3 +5,7 @@ Program publisher akan mengirimkan 5 buah pesan ke message broker dalam satu kal
 > b. The URL of: amqp://guest:guest@localhost:5672 is the same as in the subscriber program, what does it mean?
 
 Fakta bahwa URL koneksi amqp://guest:guest@localhost:5672 sama dengan yang digunakan di program subscriber berarti bahwa publisher dan subscriber terhubung ke message broker yang sama, yaitu RabbitMQ yang berjalan di mesin lokal (localhost) melalui port 5672. Kredensial guest:guest menunjukkan bahwa keduanya menggunakan akun default untuk autentikasi. Dengan ini, pesan yang dikirim oleh publisher ke routing key user_created dapat langsung diterima oleh subscriber yang sedang mendengarkan key tersebut di broker yang sama.
+
+## RabbitMQ Screenshot
+
+![screenshot rabbitmq](./images/rabbitmq_screenshot.png)
