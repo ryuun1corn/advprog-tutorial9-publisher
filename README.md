@@ -35,3 +35,10 @@ When the publisher keeps sending events continuously, those events are placed in
 Because of this, the queue can build up if the consumer cannot keep up with the speed of the producer. As a result, the total number of messages in the queue may grow to dozens or more, depending on how fast events are sent and how fast they are processed.
 
 ![slow subscriber screenshot](./images/slow_subscriber_queue_screenshot.png)
+
+### Multiple Subscribers Impact
+
+When multiple subscribers are running and listening to the same queue or routing key, the message processing load is distributed among them. This means each subscriber processes only a portion of the total incoming messages, allowing the queue to be emptied faster. As a result, the spike in the message queue seen on the dashboard reduces more quickly than when only a single subscriber is consuming events.
+
+![](./images/multiple_subscriber_screenshot.png)
+![](./images/reduced_message_spike_screenshot.png)
