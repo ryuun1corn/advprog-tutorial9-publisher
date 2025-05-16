@@ -87,3 +87,12 @@ The effect is further intensified when running multiple publishers on different 
 
 ![cloud multiple publishers screenshot](./images/cloud_multiple_publishers_screenshot.png)
 ![cloud rabbitmq multiple items impact screenshot](./images/cloud_rabbitmq_multiple_items_impact_screenshot.png)
+
+### CLOUD: Multiple Subscribers Impact
+
+When multiple subscribers are running and listening to the same queue or routing key, the message processing load is distributed among them. This means each subscriber processes only a portion of the total incoming messages, allowing the queue to be emptied faster. As a result, the spike in the message queue seen on the dashboard reduces more quickly than when only a single subscriber is consuming events.
+
+Run additional subscribers on the local machine to help the subscriber on the VPS.
+
+![cloud multiple subscriber screenshot](./images/cloud_multiple_subscriber_screenshot.png)
+![cloud reduced message spike screenshot](./images/cloud_reduced_message_spike_screenshot.png)
