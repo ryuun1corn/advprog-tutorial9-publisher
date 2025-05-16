@@ -40,5 +40,32 @@ Because of this, the queue can build up if the consumer cannot keep up with the 
 
 When multiple subscribers are running and listening to the same queue or routing key, the message processing load is distributed among them. This means each subscriber processes only a portion of the total incoming messages, allowing the queue to be emptied faster. As a result, the spike in the message queue seen on the dashboard reduces more quickly than when only a single subscriber is consuming events.
 
-![](./images/multiple_subscriber_screenshot.png)
-![](./images/reduced_message_spike_screenshot.png)
+![multiple subscriber screenshot](./images/multiple_subscriber_screenshot.png)
+![reduced message spike screenshot](./images/reduced_message_spike_screenshot.png)
+
+## Bonus: Experiment on the Cloud
+
+### Setup
+
+1. Create a RabbitMQ Cloud Instance.
+
+![cloud amqp screenshot](./images/cloudamqp_screenshot.png)
+![lavinmq screenshot](./images/lavinmq_screenshot.png)
+
+2. Configure VPS firewall to accept traffic from port 5672.
+
+![vps firewall screenshot](./images/vps_firewall_screenshot.png)
+
+3. Deploy subscriber app on the VPS.
+
+![coolify deployment screenshot](./images/coolify_deployment_screenshot.png)
+
+4. Run publisher app from local machine.
+
+### CLOUD: Message Passing Example
+
+When running the publisher (`cargo run`), it sends 30 `UserCreatedEventMessage` events to the message broker on the cloud.  
+The subscriber (running in a VPS) listens to the `user_created` queue and processes each event.
+
+![cloud message passing 1](./images/cloud_message_passing_1.png)
+![cloud message passing 2](./images/cloud_message_passing_2.png)
